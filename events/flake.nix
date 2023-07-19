@@ -25,7 +25,7 @@
         nixpkgsRelease = "nixos-23.05";
         shared = import ./nix/shared.nix;
         pythonpackage = "pythoneda.shared.artifact_changes.events";
-        pythoneda-events-artifact-changes-events-for =
+        pythoneda-shared-artifact-changes-events-for =
           { python, pythoneda-shared-pythoneda-domain, version }:
           let
             pythonVersionParts = builtins.splitVersion python.version;
@@ -53,23 +53,21 @@
               src = pyprojectTemplateFile;
             };
             src = pkgs.fetchFromGitHub {
-              owner = "pythoneda-events-artifact-changes";
-              repo = "shared";
+              owner = "pythoneda-shared-artifact-changes";
+              repo = "events";
               rev = version;
-              sha256 = "sha256-Gl3U2bRbglBeX+aqV8rCvxAdCyE9YpXPVNplDoMPWHw=";
+              sha256 = "sha256-aaqAlb/uW+BTvogQwW/RxxbAOvaygpPqFJ6muAZ4OkE=";
             };
 
             format = "pyproject";
 
             nativeBuildInputs = with python.pkgs; [ pip pkgs.jq poetry-core ];
-            propagatedBuildInputs = with python.pkgs; [
-              pythoneda-shared-pythoneda-domain
-              unidiff
-            ];
+            propagatedBuildInputs = with python.pkgs;
+              [ pythoneda-shared-pythoneda-domain ];
 
             checkInputs = with python.pkgs; [ ];
 
-            #            pythonImportsCheck = [ "pythoneda/shared/artifact_changes/shared" ];
+            pythonImportsCheck = [ pythonpackage ];
 
             unpackPhase = ''
               cp -r ${src} .
@@ -103,80 +101,80 @@
               inherit description homepage license maintainers;
             };
           };
-        pythoneda-events-artifact-changes-events-0_0_1a3-for =
+        pythoneda-shared-artifact-changes-events-0_0_1a3-for =
           { python, pythoneda-shared-pythoneda-domain }:
-          pythoneda-events-artifact-changes-events-for {
+          pythoneda-shared-artifact-changes-events-for {
             version = "0.0.1a3";
             inherit python pythoneda-shared-pythoneda-domain;
           };
       in rec {
         defaultPackage = packages.default;
         devShells = rec {
-          default = pythoneda-events-artifact-changes-events-latest;
-          pythoneda-events-artifact-changes-events-0_0_1a3-python38 =
+          default = pythoneda-shared-artifact-changes-events-latest;
+          pythoneda-shared-artifact-changes-events-0_0_1a3-python38 =
             shared.devShell-for {
               package =
-                packages.pythoneda-events-artifact-changes-events-0_0_1a3-python38;
+                packages.pythoneda-shared-artifact-changes-events-0_0_1a3-python38;
               python = pkgs.python38;
               pythoneda-shared-pythoneda-domain =
                 pythoneda-shared-pythoneda-domain.packages.${system}.pythoneda-shared-pythoneda-domain-latest-python38;
               inherit pkgs nixpkgsRelease;
             };
-          pythoneda-events-artifact-changes-events-0_0_1a3-python39 =
+          pythoneda-shared-artifact-changes-events-0_0_1a3-python39 =
             shared.devShell-for {
               package =
-                packages.pythoneda-events-artifact-changes-events-0_0_1a3-python39;
+                packages.pythoneda-shared-artifact-changes-events-0_0_1a3-python39;
               python = pkgs.python39;
               pythoneda-shared-pythoneda-domain =
                 pythoneda-shared-pythoneda-domain.packages.${system}.pythoneda-shared-pythoneda-domain-latest-python39;
               inherit pkgs nixpkgsRelease;
             };
-          pythoneda-events-artifact-changes-events-0_0_1a3-python310 =
+          pythoneda-shared-artifact-changes-events-0_0_1a3-python310 =
             shared.devShell-for {
               package =
-                packages.pythoneda-events-artifact-changes-events-0_0_1a3-python310;
+                packages.pythoneda-shared-artifact-changes-events-0_0_1a3-python310;
               python = pkgs.python310;
               pythoneda-shared-pythoneda-domain =
                 pythoneda-shared-pythoneda-domain.packages.${system}.pythoneda-shared-pythoneda-domain-latest-python310;
               inherit pkgs nixpkgsRelease;
             };
-          pythoneda-events-artifact-changes-events-latest =
-            pythoneda-events-artifact-changes-events-latest-python310;
-          pythoneda-events-artifact-changes-events-latest-python38 =
-            pythoneda-events-artifact-changes-events-0_0_1a3-python38;
-          pythoneda-events-artifact-changes-events-latest-python39 =
-            pythoneda-events-artifact-changes-events-0_0_1a3-python39;
-          pythoneda-events-artifact-changes-events-latest-python310 =
-            pythoneda-events-artifact-changes-events-0_0_1a3-python310;
+          pythoneda-shared-artifact-changes-events-latest =
+            pythoneda-shared-artifact-changes-events-latest-python310;
+          pythoneda-shared-artifact-changes-events-latest-python38 =
+            pythoneda-shared-artifact-changes-events-0_0_1a3-python38;
+          pythoneda-shared-artifact-changes-events-latest-python39 =
+            pythoneda-shared-artifact-changes-events-0_0_1a3-python39;
+          pythoneda-shared-artifact-changes-events-latest-python310 =
+            pythoneda-shared-artifact-changes-events-0_0_1a3-python310;
         };
         packages = rec {
-          default = pythoneda-events-artifact-changes-events-latest;
-          pythoneda-events-artifact-changes-events-0_0_1a3-python38 =
-            pythoneda-events-artifact-changes-events-0_0_1a3-for {
+          default = pythoneda-shared-artifact-changes-events-latest;
+          pythoneda-shared-artifact-changes-events-0_0_1a3-python38 =
+            pythoneda-shared-artifact-changes-events-0_0_1a3-for {
               python = pkgs.python38;
               pythoneda-shared-pythoneda-domain =
                 pythoneda-shared-pythoneda-domain.packages.${system}.pythoneda-shared-pythoneda-domain-latest-python38;
             };
-          pythoneda-events-artifact-changes-events-0_0_1a3-python39 =
-            pythoneda-events-artifact-changes-events-0_0_1a3-for {
+          pythoneda-shared-artifact-changes-events-0_0_1a3-python39 =
+            pythoneda-shared-artifact-changes-events-0_0_1a3-for {
               python = pkgs.python39;
               pythoneda-shared-pythoneda-domain =
                 pythoneda-shared-pythoneda-domain.packages.${system}.pythoneda-shared-pythoneda-domain-latest-python39;
             };
-          pythoneda-events-artifact-changes-events-0_0_1a3-python310 =
-            pythoneda-events-artifact-changes-events-0_0_1a3-for {
+          pythoneda-shared-artifact-changes-events-0_0_1a3-python310 =
+            pythoneda-shared-artifact-changes-events-0_0_1a3-for {
               python = pkgs.python310;
               pythoneda-shared-pythoneda-domain =
                 pythoneda-shared-pythoneda-domain.packages.${system}.pythoneda-shared-pythoneda-domain-latest-python310;
             };
-          pythoneda-events-artifact-changes-events-latest =
-            pythoneda-events-artifact-changes-events-latest-python310;
-          pythoneda-events-artifact-changes-events-latest-python38 =
-            pythoneda-events-artifact-changes-events-0_0_1a3-python38;
-          pythoneda-events-artifact-changes-events-latest-python39 =
-            pythoneda-events-artifact-changes-events-0_0_1a3-python39;
-          pythoneda-events-artifact-changes-events-latest-python310 =
-            pythoneda-events-artifact-changes-events-0_0_1a3-python310;
+          pythoneda-shared-artifact-changes-events-latest =
+            pythoneda-shared-artifact-changes-events-latest-python310;
+          pythoneda-shared-artifact-changes-events-latest-python38 =
+            pythoneda-shared-artifact-changes-events-0_0_1a3-python38;
+          pythoneda-shared-artifact-changes-events-latest-python39 =
+            pythoneda-shared-artifact-changes-events-0_0_1a3-python39;
+          pythoneda-shared-artifact-changes-events-latest-python310 =
+            pythoneda-shared-artifact-changes-events-0_0_1a3-python310;
         };
       });
 }
