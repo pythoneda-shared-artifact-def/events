@@ -78,8 +78,6 @@
               pythoneda-shared-pythoneda-domain
             ];
 
-            checkInputs = with python.pkgs; [ ];
-
             pythonImportsCheck = [ pythonpackage ];
 
             unpackPhase = ''
