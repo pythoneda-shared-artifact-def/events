@@ -18,17 +18,46 @@
     },
     "nixos": {
       "locked": {
-        "lastModified": 1689605451,
-        "narHash": "sha256-u2qp2k9V1smCfk6rdUcgMKvBj3G9jVvaPHyeXinjN9E=",
+        "lastModified": 1690148897,
+        "narHash": "sha256-l/j/AX1d2K79EWslwgWR2+htkzCbtjKZsS5NbWXnhz4=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "53657afe29748b3e462f1f892287b7e254c26d77",
+        "rev": "ac1acba43b2f9db073943ff5ed883ce7e8a40a2c",
         "type": "github"
       },
       "original": {
         "owner": "NixOS",
         "ref": "nixos-23.05",
         "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "pythoneda-shared-artifact-changes-shared": {
+      "inputs": {
+        "flake-utils": [
+          "flake-utils"
+        ],
+        "nixos": [
+          "nixos"
+        ],
+        "pythoneda-shared-pythoneda-domain": [
+          "pythoneda-shared-pythoneda-domain"
+        ]
+      },
+      "locked": {
+        "dir": "shared",
+        "lastModified": 1689751679,
+        "narHash": "sha256-WwevR/Z/qTIUVmC68w3Af+hqudsZCrO/VKD7xOZX0sg=",
+        "owner": "pythoneda-shared-artifact-changes",
+        "repo": "shared-artifact",
+        "rev": "c20131ab7c449b8dd518a5df9f7a1ae0a2f90d96",
+        "type": "github"
+      },
+      "original": {
+        "dir": "shared",
+        "owner": "pythoneda-shared-artifact-changes",
+        "ref": "0.0.1a1",
+        "repo": "shared-artifact",
         "type": "github"
       }
     },
@@ -43,11 +72,11 @@
       },
       "locked": {
         "dir": "domain",
-        "lastModified": 1689709420,
-        "narHash": "sha256-FUX4hxl00++qucSNJvBiKVWSVg8tGLzGRD1alBstdp4=",
+        "lastModified": 1690195031,
+        "narHash": "sha256-aLkFrpdFY3rmOMxD6CHCJT5E6xyEqj5saGYGN/J+KyM=",
         "owner": "pythoneda-shared-pythoneda",
         "repo": "domain-artifact",
-        "rev": "461c9136fdbfae1d004547f61609efe69538fa30",
+        "rev": "6ec6b392f92276ebfea96488a4566ceebd76d893",
         "type": "github"
       },
       "original": {
@@ -62,6 +91,7 @@
       "inputs": {
         "flake-utils": "flake-utils",
         "nixos": "nixos",
+        "pythoneda-shared-artifact-changes-shared": "pythoneda-shared-artifact-changes-shared",
         "pythoneda-shared-pythoneda-domain": "pythoneda-shared-pythoneda-domain"
       }
     }
