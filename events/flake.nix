@@ -67,7 +67,7 @@
               owner = "pythoneda-shared-artifact-changes";
               repo = "events";
               rev = version;
-              sha256 = "sha256-aaqAlb/uW+BTvogQwW/RxxbAOvaygpPqFJ6muAZ4OkE=";
+              sha256 = "sha256-Bi7MpbtWFnrTiUwYP8KbGpNsIHEQ1T+y2uDEdK8k7BU=";
             };
 
             format = "pyproject";
