@@ -51,9 +51,11 @@
       let
         org = "pythoneda-shared-artifact-changes";
         repo = "events";
-        version = "0.0.1a4";
-        sha256 = "sha256-Bi7MpbtWFnrTiUwYP8KbGpNsIHEQ1T+y2uDEdK8k7BU=";
+        version = "0.0.1a5";
+        sha256 = "sha256-4QpX2T1wV567ZIjW4KyCfnTSf5I8D0XDBkfKrM0C3mE=";
         pname = "${org}-${repo}";
+        pythonpackage = "pythoneda.shared.artifact_changes.events";
+        package = builtins.replaceStrings [ "." ] [ "/" ] pythonpackage;
         pkgs = import nixos { inherit system; };
         description = "Events representing changes in source code";
         license = pkgs.lib.licenses.gpl3;
@@ -66,7 +68,6 @@
         nixosVersion = builtins.readFile "${nixos}/.version";
         nixpkgsRelease = "nixos-${nixosVersion}";
         shared = import "${pythoneda-shared-pythoneda-banner}/nix/shared.nix";
-        pythonpackage = "pythoneda.shared.artifact_changes.events";
         pythoneda-shared-artifact-changes-events-for = { python
           , pythoneda-shared-artifact-changes-shared
           , pythoneda-shared-pythoneda-domain }:
@@ -87,13 +88,12 @@
               authors = builtins.concatStringsSep ","
                 (map (item: ''"${item}"'') maintainers);
               desc = description;
-              inherit homepage pname pythonMajorMinorVersion pythonpackage
-                version;
+              inherit homepage package pname pythonMajorMinorVersion
+                pythonpackage version;
               pythonedaSharedArtifactChangesSharedVersion =
                 pythoneda-shared-artifact-changes-shared.version;
               pythonedaSharedPythonedaDomainVersion =
                 pythoneda-shared-pythoneda-domain.version;
-              package = builtins.replaceStrings [ "." ] [ "/" ] pythonpackage;
               unidiffVersion = python.pkgs.unidiff.version;
               src = pyprojectTemplateFile;
             };
