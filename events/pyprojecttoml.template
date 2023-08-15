@@ -28,6 +28,8 @@ packages = [{include = "@package@"}]
 [tool.poetry.dependencies]
 python = "^@pythonMajorMinorVersion@"
 pythoneda-shared-artifact-changes-shared = "^@pythonedaSharedArtifactChangesSharedVersion@"
+pythoneda-shared-code-requests-shared = "^@pythonedaSharedCodeRequestsSharedVersion@"
+pythoneda-shared-code-requests-events = "^@pythonedaSharedCodeRequestsEventsVersion@"
 pythoneda-shared-pythoneda-domain = "^@pythonedaSharedPythonedaDomainVersion@"
 
 [build-system]
