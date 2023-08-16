@@ -23,7 +23,7 @@
     flake-utils.url = "github:numtide/flake-utils/v1.0.0";
     pythoneda-shared-artifact-changes-shared = {
       url =
-        "github:pythoneda-shared-artifact-changes/shared-artifact/0.0.1a5?dir=shared";
+        "github:pythoneda-shared-artifact-changes/shared-artifact/0.0.1a6?dir=shared";
       inputs.nixos.follows = "nixos";
       inputs.flake-utils.follows = "flake-utils";
       inputs.pythoneda-shared-pythoneda-banner.follows =
@@ -33,7 +33,7 @@
     };
     pythoneda-shared-code-requests-events = {
       url =
-        "github:pythoneda-shared-code-requests/events-artifact/0.0.1a1?dir=events";
+        "github:pythoneda-shared-code-requests/events-artifact/0.0.1a2?dir=events";
       inputs.nixos.follows = "nixos";
       inputs.flake-utils.follows = "flake-utils";
       inputs.pythoneda-shared-code-requests-shared.follows =
@@ -45,7 +45,7 @@
     };
     pythoneda-shared-code-requests-shared = {
       url =
-        "github:pythoneda-shared-code-requests/shared-artifact/0.0.1a1?dir=shared";
+        "github:pythoneda-shared-code-requests/shared-artifact/0.0.1a2?dir=shared";
       inputs.nixos.follows = "nixos";
       inputs.flake-utils.follows = "flake-utils";
       inputs.pythoneda-shared-pythoneda-banner.follows =
@@ -73,8 +73,8 @@
       let
         org = "pythoneda-shared-artifact-changes";
         repo = "events";
-        version = "0.0.1a5";
-        sha256 = "sha256-4QpX2T1wV567ZIjW4KyCfnTSf5I8D0XDBkfKrM0C3mE=";
+        version = "0.0.1a7";
+        sha256 = "sha256-lH7y5spOER3yBIFy4u9yziWq/lf51ZyC4gnpM9XM7bg=";
         pname = "${org}-${repo}";
         pythonpackage = "pythoneda.shared.artifact_changes.events";
         package = builtins.replaceStrings [ "." ] [ "/" ] pythonpackage;
