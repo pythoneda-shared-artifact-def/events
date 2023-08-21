@@ -87,17 +87,17 @@
       },
       "locked": {
         "dir": "events",
-        "lastModified": 1692375727,
-        "narHash": "sha256-B1qeJJTsKOkLlfTOvH0CjQh7DszGfiga3QN2z2lMP2o=",
+        "lastModified": 1692607395,
+        "narHash": "sha256-T/Shp+bfID4laIMOpVMzL+naeDEELlBVaxuZClJdR28=",
         "owner": "pythoneda-shared-code-requests",
         "repo": "events-artifact",
-        "rev": "de0fbd81613f2163d7270ab84923f222b4cc76b7",
+        "rev": "8291a33ab69fcbae2b5e9a9dfc1f3fb4dbd84cc2",
         "type": "github"
       },
       "original": {
         "dir": "events",
         "owner": "pythoneda-shared-code-requests",
-        "ref": "0.0.1a4",
+        "ref": "0.0.1a5",
         "repo": "events-artifact",
         "type": "github"
       }
