@@ -75,8 +75,8 @@
       let
         org = "pythoneda-shared-artifact-changes";
         repo = "events";
-        version = "0.0.3";
-        sha256 = "sha256-c4hAac3/pOEX3djKb4qn9zFVvoWxcRxtkR2XWvFD0AM=";
+        version = "0.0.4";
+        sha256 = "1mdwkhjbxa4zzxvchgjfvs38na0dh7d310n36yjq2lj2fdz59n27";
         pname = "${org}-${repo}";
         pythonpackage = "pythoneda.shared.artifact_changes.events";
         package = builtins.replaceStrings [ "." ] [ "/" ] pythonpackage;
@@ -90,7 +90,8 @@
         space = "D";
         layer = "D";
         nixosVersion = builtins.readFile "${nixos}/.version";
-        nixpkgsRelease = "nixos-${nixosVersion}";
+        nixpkgsRelease =
+          builtins.replaceStrings [ "\n" ] [ "" ] "nixos-${nixosVersion}";
         shared = import "${pythoneda-shared-pythoneda-banner}/nix/shared.nix";
         pythoneda-shared-artifact-changes-events-for = { python
           , pythoneda-shared-artifact-changes-shared
