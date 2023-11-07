@@ -1,9 +1,9 @@
 """
-pythoneda/shared/artifact_changes/events/__init__.py
+pythoneda/shared/artifact/events/artifact/__init__.py
 
-This file ensures pythoneda.shared.artifact_changes.events is a namespace.
+This file ensures pythoneda.shared.artifact.events.artifact is a namespace.
 
-Copyright (C) 2023-today rydnr's pythoneda-shared-artifact-changes/events-artifact
+Copyright (C) 2023-today rydnr's pythoneda-shared-artifact/events-artifact
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -18,4 +18,4 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
-__path__ = __import__('pkgutil').extend_path(__path__, __name__)
+__path__ = __import__("pkgutil").extend_path(__path__, __name__)
