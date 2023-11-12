@@ -28,7 +28,7 @@
     };
     pythoneda-shared-pythoneda-domain = {
       url =
-        "github:pythoneda-shared-pythoneda/domain-artifact/0.0.13?dir=domain";
+        "github:pythoneda-shared-pythoneda/domain-artifact/0.0.14?dir=domain";
       inputs.nixos.follows = "nixos";
       inputs.flake-utils.follows = "flake-utils";
       inputs.pythoneda-shared-pythoneda-banner.follows =
@@ -94,8 +94,10 @@
             format = "pyproject";
 
             nativeBuildInputs = with python.pkgs; [ pip pkgs.jq poetry-core ];
-            propagatedBuildInputs = with python.pkgs;
-              [ pythoneda-shared-pythoneda-domain ];
+            propagatedBuildInputs = with python.pkgs; [
+              pythoneda-shared-pythoneda-domain
+              unidiff
+            ];
 
             # pythonImportsCheck = [ pythonpackage ];
 
