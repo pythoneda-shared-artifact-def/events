@@ -1,20 +1,20 @@
-# events-artifact
+# Events def
 
-This is the artifact for [https://github.com/pythoneda-shared-artifact/events](https://github.com/pythoneda-shared-artifact/events "pythoneda-shared-artifact/events").
+This is the definition for [https://github.com/pythoneda-shared-artifact/events](https://github.com/pythoneda-shared-artifact/events "pythoneda-shared-artifact/events").
 
 ## How to declare it in your flake
 
-Check the latest tag of the artifact repository: [https://github.com/pythoneda-shared-artifact/events-artifact-artifact/tags](https://github.com/pythoneda-shared-artifact/events-artifact-artifact/tags) and use it instead of the `[version]` placeholder below.
+Check the latest tag of this repository and use it instead of the `[version]` placeholder below.
 
 ```nix
 {
   description = "[..]";
   inputs = rec {
     [..]
-    pythoneda-shared-artifact-events-artifact = {
+    pythoneda-shared-artifact-events = {
       [optional follows]
       url =
-        "github:pythoneda-shared-artifact/events-artifact-artifact/[version]?dir=events-artifact";
+        "github:pythoneda-shared-artifact-def/events/[version]";
     };
   };
   outputs = [..]
@@ -25,10 +25,7 @@ Should you use another PythonEDA modules, you might want to pin those also used 
 
 Use the specific package depending on your system (one of `flake-utils.lib.defaultSystems`) and Python version:
 
-- `#packages.[system].pythoneda-shared-artifact-events-artifact-python38` 
-- `#packages.[system].pythoneda-shared-artifact-events-artifact-python39` 
-- `#packages.[system].pythoneda-shared-artifact-events-artifact-python310` 
-- `#packages.[system].pythoneda-shared-artifact-events-artifact-python311` 
-
-The Nix flake is under the 
-[infrastructure](https://github.com/pythoneda-shared-artifact/events-artifact-artifact/tree/main/events-artifact "events-artifact") folder in <https://github.com/pythoneda-shared-artifact/events-artifact-artifact>.
+- `#packages.[system].pythoneda-shared-artifact-events-python38` 
+- `#packages.[system].pythoneda-shared-artifact-events-python39` 
+- `#packages.[system].pythoneda-shared-artifact-events-python310` 
+- `#packages.[system].pythoneda-shared-artifact-events-python311` 

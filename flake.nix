@@ -1,8 +1,8 @@
-# events/flake.nix
+# flake.nix
 #
 # This file packages pythoneda-shared-artifact/events as a Nix flake.
 #
-# Copyright (C) 2023-today rydnr's pythoneda-shared-artifact/events-artifact
+# Copyright (C) 2023-today rydnr's pythoneda-shared-artifact-def/events
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -22,17 +22,16 @@
     nixos.url = "github:NixOS/nixpkgs/nixos-23.05";
     flake-utils.url = "github:numtide/flake-utils/v1.0.0";
     pythoneda-shared-pythoneda-banner = {
-      url = "github:pythoneda-shared-pythoneda/banner/0.0.13";
-      inputs.nixos.follows = "nixos";
       inputs.flake-utils.follows = "flake-utils";
+      inputs.nixos.follows = "nixos";
+      url = "github:pythoneda-shared-pythoneda-def/banner/0.0.2";
     };
     pythoneda-shared-pythoneda-domain = {
-      url =
-        "github:pythoneda-shared-pythoneda/domain-artifact/0.0.14?dir=domain";
-      inputs.nixos.follows = "nixos";
       inputs.flake-utils.follows = "flake-utils";
+      inputs.nixos.follows = "nixos";
       inputs.pythoneda-shared-pythoneda-banner.follows =
         "pythoneda-shared-pythoneda-banner";
+      url = "github:pythoneda-shared-pythoneda-def/domain/0.0.2";
     };
   };
   outputs = inputs:
