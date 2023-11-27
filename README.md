@@ -1,4 +1,4 @@
-# Events def
+# pythoneda-shared-artifact/events
 
 This is the definition for [https://github.com/pythoneda-shared-artifact/events](https://github.com/pythoneda-shared-artifact/events "pythoneda-shared-artifact/events").
 
