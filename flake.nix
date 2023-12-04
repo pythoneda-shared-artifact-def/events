@@ -40,8 +40,8 @@
       let
         org = "pythoneda-shared-artifact";
         repo = "events";
-        version = "0.0.6";
-        sha256 = "1rplx5qwr4schvgwnnzy595d45myp4qsyhgpgcx55m9maxgkllwl";
+        version = "0.0.7";
+        sha256 = "0fbyc9kvqx82yzkkxrqafkrrrhjnxbgs2fwjjifxmisv9k765i7k";
         pname = "${org}-${repo}";
         pythonpackage = "pythoneda.shared.artifact.events";
         package = builtins.replaceStrings [ "." ] [ "/" ] pythonpackage;
