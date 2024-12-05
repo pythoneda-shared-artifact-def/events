@@ -31,7 +31,7 @@
       inputs.nixos.follows = "nixos";
       inputs.pythoneda-shared-pythonlang-banner.follows =
         "pythoneda-shared-pythonlang-banner";
-      url = "github:pythoneda-shared-pythonlang-def/domain/0.0.92";
+      url = "github:pythoneda-shared-pythonlang-def/domain/0.0.93";
     };
   };
   outputs = inputs:
@@ -40,8 +40,8 @@
       let
         org = "pythoneda-shared-artifact";
         repo = "events";
-        version = "0.0.13";
-        sha256 = "06q2q7izxpcycc3pg0xpj04jg8d3728zvppzr0frnhqc679ilzn0";
+        version = "0.0.14";
+        sha256 = "1wrh7q65c0wfgp61x2l023wn42pwmwmnaa9p19cz46krzipzswfk";
         pname = "${org}-${repo}";
         pythonpackage = "pythoneda.shared.artifact.events";
         package = builtins.replaceStrings [ "." ] [ "/" ] pythonpackage;
