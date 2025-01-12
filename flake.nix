@@ -104,7 +104,6 @@
               command cp -r ${src} .
               sourceRoot=$(command ls | command grep -v env-vars)
               command chmod -R +w $sourceRoot
-              command cat ${pyprojectToml}
               command cp ${pyprojectToml} $sourceRoot/pyproject.toml
             '';
 
@@ -119,20 +118,20 @@
               command mkdir -p $out/dist $out/deps/flakes $out/deps/nixpkgs
               command cp dist/${wheelName} $out/dist
               for dep in ${pythoneda-shared-pythonlang-domain}; do
-                command cp -r $dep/dist/* $out/deps
+                command cp -r $dep/dist/* $out/deps || true
                 if [ -e $dep/deps ]; then
-                  command cp -r $dep/deps/* $out/deps
+                  command cp -r $dep/deps/* $out/deps || true
                 fi
                 METADATA=$dep/lib/python${pythonMajorMinorVersion}/site-packages/*.dist-info/METADATA
                 NAME="$(command grep -m 1 '^Name: ' $METADATA | command cut -d ' ' -f 2)"
                 VERSION="$(command grep -m 1 '^Version: ' $METADATA | command cut -d ' ' -f 2)"
-                command ln -s $dep $out/deps/flakes/$NAME-$VERSION
+                command ln -s $dep $out/deps/flakes/$NAME-$VERSION || true
               done
               for nixpkgsDep in ${unidiff}; do
                 METADATA=$nixpkgsDep/lib/python${pythonMajorMinorVersion}/site-packages/*.dist-info/METADATA
                 NAME="$(command grep -m 1 '^Name: ' $METADATA | command cut -d ' ' -f 2)"
                 VERSION="$(command grep -m 1 '^Version: ' $METADATA | command cut -d ' ' -f 2)"
-                command ln -s $nixpkgsDep $out/deps/nixpkgs/$NAME-$VERSION
+                command ln -s $nixpkgsDep $out/deps/nixpkgs/$NAME-$VERSION || true
               done
             '';
 
